@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Rock, Paper, Scissors</h1>
+
+        <div class="score-container">
+            <div id="player-score" class="score-box">Player: 0</div>
+            <div id="computer-score" class="score-box">Computer: 0</div>
+        </div>
+
+        <div class="message">
+            <p>Choose your move!</p>
+            <p id="prompt">Press 'R' for Rock, 'P' for Paper, or 'S' for Scissors.</p>
+        </div>
+
+        <div class="choices-display">
+            <div id="player-choice" class="choice-display-box">Your choice: -</div>
+            <div id="computer-choice" class="choice-display-box">Computer's choice: -</div>
+        </div>
+
+        <div id="result" class="result-message">Waiting for your move...</div>
+
+        <button id="reset-button" class="reset-button">Reset Game</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

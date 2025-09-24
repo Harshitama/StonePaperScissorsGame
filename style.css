@@ -1,0 +1,164 @@
+:root {
+    --bg-color: #1a1a2e; /* Dark background */
+    --card-bg: #16213e; /* Slightly lighter card background */
+    --text-color: #e0e0e0; /* Light grey text */
+    --accent-color-1: #0f3460; /* Dark blue accent */
+    --accent-color-2: #e94560; /* Red accent for win/lose */
+    --win-color: #28a745; /* Green for win */
+    --lose-color: #dc3545; /* Red for lose */
+    --tie-color: #ffc107; /* Yellow for tie */
+    --button-bg: #533483; /* Purple button */
+    --button-hover-bg: #7f52cf; /* Lighter purple on hover */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow: hidden; /* Prevent scrollbar from animation */
+}
+
+/* Game Container - The main card */
+.game-container {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    animation: fadeIn 1s ease-out; /* Fade in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5); /* Subtle glow */
+}
+
+.message p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+#prompt {
+    font-size: 0.9em;
+    color: #a0a0a0; /* Lighter grey for prompt */
+    margin-bottom: 25px;
+}
+
+/* Scoreboard */
+.score-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.score-box {
+    background-color: var(--accent-color-1);
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: 600;
+    min-width: 120px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.score-box:hover {
+    transform: translateY(-5px); /* Lift on hover */
+}
+
+/* Choice Display */
+.choices-display {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.choice-display-box {
+    background-color: var(--accent-color-1);
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    min-width: 150px;
+    white-space: nowrap; /* Keep text on one line */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Result Message */
+#result {
+    font-size: 2em; /* Larger result text */
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    min-height: 1.5em; /* Prevent layout shift when text changes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* Dynamic Result Colors */
+.result-message.win {
+    color: var(--win-color);
+    border: 2px solid var(--win-color);
+    background-color: rgba(40, 167, 69, 0.1);
+}
+.result-message.lose {
+    color: var(--lose-color);
+    border: 2px solid var(--lose-color);
+    background-color: rgba(220, 53, 69, 0.1);
+}
+.result-message.tie {
+    color: var(--tie-color);
+    border: 2px solid var(--tie-color);
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* Reset Button */
+.reset-button {
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-3px);
+}
+
+.reset-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
